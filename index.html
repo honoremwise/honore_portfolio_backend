@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>My Portfolio</title>
+  <style>
+    /* Default styles */
+    body {
+        background-color: #1E1E1E;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        margin-top: -10px;
+        background-color: #FFFFFF;
+        height: auto;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        display: flex;
+        align-items: center; /* Center items vertically */
+        justify-content: space-between; /* Distribute items horizontally */
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    .logo img {
+        margin-top: 5px;
+        border-radius: 10px;
+    }
+
+    .nav {
+        margin-right: 20px; /* Adjust margin */
+    }
+
+    .nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav ul li {
+        display: inline;
+        margin-right: 20px; /* Adjust margin */
+    }
+
+    .nav ul li:last-child {
+        margin-right: 0; /* Remove margin for the last item */
+    }
+
+    .nav ul li a {
+        color: #1E1E1E;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .hire-me {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #1E1E1E;
+        color: #fff;
+        border-radius: 10px;
+        font-family: 'Inter', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 768px) {
+        .nav ul {
+            display: none; /* Hide menu items by default */
+        }
+
+        /* Hide the navigation bar */
+        .nav {
+            display: none;
+        }
+
+        /* Show the hamburger menu */
+        .hamburger-menu {
+            display: block;
+        }
+
+        /* Adjust the styles for the hamburger menu bars */
+        .hamburger-menu {
+            display: block;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #1E1E1E;
+            margin: 5px 0;
+        }
+
+        /* Show the phoneMenus when hamburger menu is clicked */
+        .phoneMenus {
+            display: none; /* Hide phoneMenus by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 30, 30, 0.9);
+            z-index: 999;
+        }
+
+        .phoneMenus ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .phoneMenus ul li {
+            margin-bottom: 20px;
+        }
+
+        .phoneMenus ul li a {
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #FFFFFF;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo"><img src="./images/logo.png" width="60px" height="60px"/></div>
+    <div class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact-us.html">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="hire-me">Hire me</div>
+    <div class="hamburger-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <!-- phone menus -->
+    <div class="phoneMenus">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact-us.html">Contact us</a></li>
+      </ul>
+      <div class="close-icon">&times;</div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle phone menus on click
+    document.querySelector('.hamburger-menu').addEventListener('click', function() {
+      document.querySelector('.phoneMenus').style.display = 'block';
+    });
+
+    // Close phone menus on close icon click
+    document.querySelector('.close-icon').addEventListener('click', function() {
+      document.querySelector('.phoneMenus').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
